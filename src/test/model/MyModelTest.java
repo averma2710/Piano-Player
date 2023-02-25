@@ -182,10 +182,16 @@ class MyModelTest {
 
     @Test
     public void NiceOrWrongTest() {
-        playLearn.setPattern("a");
-        String a = playLearn.niceOrWrong("a",0);
+        playLearn.setPattern("asdf");
+        assertEquals(0, playLearn.getScore());
+        assertEquals("nice!", playLearn.niceOrWrong("a",0));
         assertEquals(1, playLearn.getScore());
-        assertEquals("nice!", a);
+        assertEquals("wrong!", playLearn.niceOrWrong("b",1));
+        assertEquals(1, playLearn.getScore());
+        assertEquals("nice!", playLearn.niceOrWrong("d",2));
+        assertEquals(2, playLearn.getScore());
+        assertEquals("wrong!", playLearn.niceOrWrong("g",3));
+        assertEquals(2, playLearn.getScore());
     }
      @Test
      public void getRecordsTest() {

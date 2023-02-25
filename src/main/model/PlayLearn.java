@@ -23,17 +23,16 @@ public class PlayLearn {
         return pattern;
     }
 
-    public String niceOrWrong(String p, int l) {
-        String output = "";
-        for (int i = l; i < pattern.length(); i++) {
-            if (p.equals(pattern.substring(i,i + 1))) {
-                output = "nice!";
-                setScore();
-            } else {
-                output = "wrong!";
-            }
-            return output;
+    public String niceOrWrong(String p, int i) {
+        String output;
+
+        if (p.equals(pattern.substring(i,i + 1))) {
+            output = "nice!";
+            setScore();
+        } else {
+            output = "wrong!";
         }
+
         return output;
     }
 
