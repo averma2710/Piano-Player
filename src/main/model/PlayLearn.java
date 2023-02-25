@@ -21,8 +21,8 @@ public class PlayLearn {
             pattern = learn.fur();
         } else if (str.equals("AVR")) {
             pattern = learn.avr();
-        } else if (str.equals("SANS")) {
-            pattern = learn.sans();
+        } else  {
+            pattern = learn.def();
         }
 
         return pattern;

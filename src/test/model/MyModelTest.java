@@ -48,7 +48,7 @@ class MyModelTest {
 
     @Test
     public void testSans() {
-        assertEquals("ldlslsgjd", learn.sans());
+        assertEquals("ldlslsgjd", learn.def());
     }
 
     @Test
@@ -144,7 +144,7 @@ class MyModelTest {
         assertEquals("lkjhgfdsa", playLearn.checks("MOOSE"));
         assertEquals("asdfghjkl", playLearn.checks("FUR"));
         assertEquals("ashdkgsjf", playLearn.checks("AVR"));
-        assertEquals("ldlslsgjd", playLearn.checks("SANS"));
+        assertEquals("ldlslsgjd", playLearn.checks("DEFAULT"));
     }
     @Test
     public void AddStringRecorderTest() {

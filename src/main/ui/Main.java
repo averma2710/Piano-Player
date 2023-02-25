@@ -45,7 +45,7 @@ public class Main {
                     System.out.println(learn.fur());
                 } else if (keys1.equals("PLAY")) {
                     System.out.println("Select a pattern you want to play with \n");
-                    System.out.println("Enter MOOSE or FUR");
+                    System.out.println("Enter MOOSE, FUR, AVR, or any key for default pattern");
                     String patt = key.nextLine();
                     learner.checks(patt); // pattern setter
                     System.out.println("\n" + learner.getPattern() + "\n");

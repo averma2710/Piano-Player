@@ -18,7 +18,7 @@ public class Learn {
         return "ashdkgsjf";
     }
 
-    public String sans() {
+    public String def() {
         return "ldlslsgjd";
     }
 
