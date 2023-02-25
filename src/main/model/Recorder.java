@@ -20,7 +20,6 @@ public class Recorder {
 
     public void addRecorder(String key) {
         music.add(key);
-
     }
 
 
