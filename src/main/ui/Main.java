@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+@SuppressWarnings({"checkstyle:LineLength", "checkstyle:SuppressWarnings"})
 public class Main {
     @SuppressWarnings({"checkstyle:MethodLength", "checkstyle:SuppressWarnings"})
     public static void main(String[] args) throws LineUnavailableException, IOException,
@@ -99,7 +100,9 @@ public class Main {
         }
     }
 
-    public static void keysPlayer(String key) throws LineUnavailableException, IOException, UnsupportedAudioFileException {
+    public static void keysPlayer(String key) throws LineUnavailableException,
+            IOException, UnsupportedAudioFileException {
+
         Piano piano = new Piano();
         AudioInputStream a = AudioSystem.getAudioInputStream(piano.music(key));
         Clip clip = AudioSystem.getClip();
