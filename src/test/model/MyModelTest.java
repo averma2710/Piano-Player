@@ -26,6 +26,7 @@ class MyModelTest {
         playLearn = new PlayLearn(0, "");
         Records = new Progress();
         record = new Recorder(list);
+        record1 = new Recorder(list);
     }
 
     @Test
@@ -182,34 +183,60 @@ class MyModelTest {
     @Test
     public void NiceOrWrongTest() {
         playLearn.setPattern("a");
-        playLearn.niceOrWrong("a",0);
+        String a = playLearn.niceOrWrong("a",0);
         assertEquals(1, playLearn.getScore());
-
+        assertEquals("nice!", a);
     }
-    // @Test
-    // public void getRecordsTest() {
-    //     record.addRecorder("a");
-    //     record.addRecorder("s");
-    //    record.addRecorder("d");
-    //    record.addRecorder("f");
-    //    record.addRecorder("g");
-    //    record.addRecorder("h");
-    //    record.addRecorder("j");
-    //    record.addRecorder("k");
-    //    record.addRecorder("l");
-    //   Records.addRecording(record);
-    //   record1.addRecorder("l");
-    //   record1.addRecorder("s");
-    //   record1.addRecorder("d");
-    //   record1.addRecorder("f");
-    //   record1.addRecorder("g");
-    //   record1.addRecorder("h");
-    //   record1.addRecorder("j");
-    //   record1.addRecorder("k");
-    //   record1.addRecorder("l");
-    //   Records.addRecording(record1);
-    //   assertEquals(record1.getMusic().size(),Records.record1(1).getMusic().size());
-    // }
+     @Test
+     public void getRecordsTest() {
+        record.addRecorder("a");
+        record.addRecorder("s");
+        record.addRecorder("d");
+        record.addRecorder("f");
+        record.addRecorder("g");
+        record.addRecorder("h");
+        record.addRecorder("j");
+        record.addRecorder("k");
+        record.addRecorder("l");
+        Records.addRecording(record);
+        record1.addRecorder("l");
+        record1.addRecorder("s");
+        record1.addRecorder("d");
+        record1.addRecorder("f");
+        record1.addRecorder("g");
+        record1.addRecorder("h");
+        record1.addRecorder("j");
+        record1.addRecorder("k");
+        record1.addRecorder("l");
+        Records.addRecording(record1);
+        assertEquals(record1.getMusic().size(),Records.getRecorder(1).getMusic().size());
+     }
+
+    @Test
+    public void recordedMusicTest() {
+        record.addRecorder("a");
+        record.addRecorder("s");
+        record.addRecorder("d");
+        record.addRecorder("f");
+        record.addRecorder("g");
+        record.addRecorder("h");
+        record.addRecorder("j");
+        record.addRecorder("k");
+        record.addRecorder("l");
+        Records.addRecording(record);
+        record1.addRecorder("l");
+        record1.addRecorder("s");
+        record1.addRecorder("d");
+        record1.addRecorder("f");
+        record1.addRecorder("g");
+        record1.addRecorder("h");
+        record1.addRecorder("j");
+        record1.addRecorder("k");
+        record1.addRecorder("l");
+        Records.addRecording(record1);
+        assertEquals("s",record.recordedMusic(1));
+        assertEquals("k",record1.recordedMusic(7));
+    }
 
 
 }

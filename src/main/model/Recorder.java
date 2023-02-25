@@ -27,15 +27,8 @@ public class Recorder {
         return music;
     }
 
-    public void recordedPlayer() throws LineUnavailableException,
-            IOException, UnsupportedAudioFileException, InterruptedException {
-        Thread.sleep(2000);
-        System.out.println(music.size());
-        for (int i = 0; i < music.size(); i++) {
-            System.out.println(music.get(i));
-            keysPlayer(music.get(i));
-            Thread.sleep(1000);
-        }
+    public String recordedMusic(int i) {
+        return music.get(i);
     }
 }
 

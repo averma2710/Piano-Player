@@ -78,7 +78,12 @@ public class Main {
                 if (num > progress.getRecordings().size()) {
                     System.out.println("You don't have enough number of recording to play");
                 } else {
-                    progress.getRecorder(num - 1).recordedPlayer();
+                    Recorder tempRecorder = progress.getRecorder(num - 1);
+                    for (int i = 0; i < tempRecorder.getMusic().size(); i++) {
+                        System.out.println(tempRecorder.recordedMusic(i));
+                        keysPlayer(tempRecorder.recordedMusic(i));
+                        Thread.sleep(1000);
+                    }
                 }
 
 
