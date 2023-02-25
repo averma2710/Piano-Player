@@ -19,7 +19,12 @@ public class PlayLearn {
             pattern = learn.moos();
         } else if (str.equals("FUR")) {
             pattern = learn.fur();
+        } else if (str.equals("AVR")) {
+            pattern = learn.avr();
+        } else if (str.equals("SANS")) {
+            pattern = learn.sans();
         }
+
         return pattern;
     }
 

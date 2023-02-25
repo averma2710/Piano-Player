@@ -19,6 +19,7 @@ class MyModelTest {
     Recorder record;
     Recorder record1;
     ArrayList<String> list = new ArrayList<>();
+    Learn learn;
 
     @BeforeEach
     public void setup() {
@@ -27,26 +28,27 @@ class MyModelTest {
         Records = new Progress();
         record = new Recorder(list);
         record1 = new Recorder(list);
+        learn = new Learn();
     }
 
     @Test
     public void testFur() {
-        assertEquals("asdfghjkl", Learn.fur());
+        assertEquals("asdfghjkl", learn.fur());
     }
 
     @Test
     public void testMoos() {
-        assertEquals("lkjhgfdsa", Learn.moos());
+        assertEquals("lkjhgfdsa", learn.moos());
     }
 
     @Test
     public void testAvr() {
-        assertEquals("ashdkgsjf", Learn.avr());
+        assertEquals("ashdkgsjf", learn.avr());
     }
 
     @Test
     public void testSans() {
-        assertEquals("ldlslsgjd", Learn.sans());
+        assertEquals("ldlslsgjd", learn.sans());
     }
 
     @Test
@@ -141,6 +143,8 @@ class MyModelTest {
     public void PresetPatternTest() {
         assertEquals("lkjhgfdsa", playLearn.checks("MOOSE"));
         assertEquals("asdfghjkl", playLearn.checks("FUR"));
+        assertEquals("ashdkgsjf", playLearn.checks("AVR"));
+        assertEquals("ldlslsgjd", playLearn.checks("SANS"));
     }
     @Test
     public void AddStringRecorderTest() {

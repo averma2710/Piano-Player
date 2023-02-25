@@ -5,20 +5,20 @@ public class Learn {
 
     }
 
-    public static String fur() {
+    public String fur() {
         return "asdfghjkl";
 
     }
 
-    public static String moos() {
+    public String moos() {
         return "lkjhgfdsa";
     }
 
-    public static String avr() {
+    public String avr() {
         return "ashdkgsjf";
     }
 
-    public static String sans() {
+    public String sans() {
         return "ldlslsgjd";
     }
 
