@@ -78,7 +78,7 @@ public class Main {
                 if (num > progress.getRecordings().size()) {
                     System.out.println("You don't have enough number of recording to play");
                 } else {
-                    progress.record1(num - 1).recordedPlayer();
+                    progress.getRecorder(num - 1).recordedPlayer();
                 }
 
 

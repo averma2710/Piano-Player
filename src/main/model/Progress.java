@@ -17,7 +17,7 @@ public class Progress {
         return prev;
     }
 
-    public Recorder record1(int i) {
+    public Recorder getRecorder(int i) {
         return prev.get(i);
     }
 }

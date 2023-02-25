@@ -34,7 +34,7 @@ public class PlayLearn {
             }
             return output;
         }
-        return null;
+        return output;
     }
 
     public String scorer() {
