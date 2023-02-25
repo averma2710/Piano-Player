@@ -236,6 +236,7 @@ class MyModelTest {
         Records.addRecording(record1);
         assertEquals("s",record.recordedMusic(1));
         assertEquals("k",record1.recordedMusic(7));
+        assertEquals("l",record1.recordedMusic(8));
     }
 
 
