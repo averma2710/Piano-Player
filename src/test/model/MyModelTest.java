@@ -119,7 +119,7 @@ class MyModelTest {
     @Test
     public void GameScoreAdderTest() {
         playLearn = new PlayLearn(0, "asdfghjkl");
-        assertEquals(1, playLearn.setScore());
+        assertEquals(1, playLearn.addScore());
 
     }
     @Test

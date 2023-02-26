@@ -15,6 +15,7 @@ public class Piano {
     }
 
     @SuppressWarnings({"checkstyle:MethodLength", "checkstyle:SuppressWarnings"})
+    //EFFECTS returns music file.
     public File music(String keys) throws LineUnavailableException, IOException, UnsupportedAudioFileException {
 
 

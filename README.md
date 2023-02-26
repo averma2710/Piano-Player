@@ -15,7 +15,7 @@ The application interests me because of my passion for music.
 A *bulleted* list:
 - As a user, I want to play piano anywhere and anytime.
 - As a user, I want to record my music.
-- As a user, I want to see effects while playing piano.
+- As a user, I want to play my recorded music.
 - As a user, I want to learn to play different beats with a help of a game.
 - 
 
