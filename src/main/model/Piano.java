@@ -5,10 +5,12 @@ import javax.sound.sampled.UnsupportedAudioFileException;
 import java.io.File;
 import java.io.IOException;
 
+//Assigns a sound fie to particular key entered by user.
 
 public class Piano {
     File file;
 
+//Constructs a Piano.
 
     public Piano() {
 

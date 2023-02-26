@@ -1,6 +1,9 @@
 package model;
+//Represents pattern that a user can learn.
 
 public class Learn {
+    //constructs a pattern to learn.
+
     public Learn() {
 
     }

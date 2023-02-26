@@ -8,6 +8,8 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 @SuppressWarnings({"checkstyle:LineLength", "checkstyle:SuppressWarnings"})
+//Represents the piano where music is played.
+
 public class Main {
     @SuppressWarnings({"checkstyle:MethodLength", "checkstyle:SuppressWarnings"})
     public static void main(String[] args) throws LineUnavailableException, IOException,
@@ -30,7 +32,7 @@ public class Main {
             System.out.println("\t - Play piano or Learn piano\n");
             System.out.println("\t - Press L to learn\n");
             System.out.println("\t - To record your sound enter R\n");
-            System.out.println("\t - To enter random keys player enter RANDOM \n");
+            System.out.println("\t - For free play enter RANDOM \n");
             System.out.println("\t - To play your recording enter RECORDS \n");
             System.out.println("\t - To quit, enter Q");
             Scanner key = new Scanner(System.in);
@@ -89,6 +91,7 @@ public class Main {
 
             } else if (keys1.equals("RANDOM")) {
                 System.out.println("enter keys to play music \n");
+                System.out.println("press keys a s d f g h j k l for different sounds, any key for default sound \n except the enter key");
                 System.out.println("to quit enter QUIT");
                 while (true) {
                     keys1 = key.nextLine();
@@ -104,6 +107,8 @@ public class Main {
             }
         }
     }
+    //EFFECTS: Plays the sound associated with the string key.
+    //MODIFIES: this
 
     public static void keysPlayer(String key) throws LineUnavailableException,
             IOException, UnsupportedAudioFileException {

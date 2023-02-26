@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 import static ui.Main.keysPlayer;
+//Stores the sounds you wished to record.
 
 public class Recorder {
 
@@ -15,6 +16,7 @@ public class Recorder {
 
     //EFFECTS: sets music to keys.
     //MODIFIES: this
+//Constructs a recorder that contains music which is a list of strings.
 
     public Recorder(ArrayList<String> keys) {
         music = keys;

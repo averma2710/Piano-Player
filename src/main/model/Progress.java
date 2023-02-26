@@ -1,6 +1,8 @@
 package model;
+//Stores previously played recordings.
 
 import java.util.ArrayList;
+//Constructs a progress which contains a list pf recorder.
 
 public class Progress {
 

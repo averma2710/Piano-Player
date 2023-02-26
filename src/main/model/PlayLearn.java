@@ -1,10 +1,12 @@
 package model;
+//
 
 public class PlayLearn {
 
     private int score = 0;
     Learn learn = new Learn();
     String pattern;
+//Constructs a game with score and pattern.
 
     public PlayLearn(int score, String pattern) {
         this.score = score;
