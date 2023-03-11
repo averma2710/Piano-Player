@@ -1,10 +1,14 @@
 package model;
 //Stores previously played recordings.
 
+import org.json.JSONArray;
+import org.json.JSONObject;
+import persisitence.Writable;
+
 import java.util.ArrayList;
 //Constructs a progress which contains a list pf recorder.
 
-public class Progress {
+public class Progress implements Writable {
 
     ArrayList<Recorder> prev = new ArrayList<>();
 
@@ -26,6 +30,22 @@ public class Progress {
     public Recorder getRecorder(int i) {
         return prev.get(i);
     }
+
+    @Override
+    public JSONObject toJson() {
+        JSONObject json = new JSONObject();
+        json.put("recorder", "myRecorder");
+        json.put("songs", recordersToJson());
+        return json;
+    }
+
+    private JSONArray recordersToJson() {
+        JSONArray jsonArray = new JSONArray();
+
+        for (Recorder r : prev) {
+            jsonArray.put(r.getMusic());
+        }
+
+        return jsonArray;
+    }
 }
-
-

@@ -17,6 +17,7 @@ A *bulleted* list:
 - As a user, I want to record my music.
 - As a user, I want to play my recorded music.
 - As a user, I want to learn to play different beats with a help of a game.
-- 
+- As a user, I want to have an option save my recordings.
+- As a user, I want to have an option to load my recordings and play them.
 
   

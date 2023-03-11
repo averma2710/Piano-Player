@@ -2,12 +2,15 @@ package model;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import persisitence.JsonReader;
+import persisitence.WriterJson;
 
 import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -20,6 +23,7 @@ class MyModelTest {
     Recorder record1;
     ArrayList<String> list = new ArrayList<>();
     Learn learn;
+    int i = 0;
 
     @BeforeEach
     public void setup() {
@@ -248,6 +252,89 @@ class MyModelTest {
         assertEquals("a",record.recordedMusic(0));
         assertEquals("k",record1.recordedMusic(7));
         assertEquals("l",record1.recordedMusic(8));
+    }
+
+    @Test
+    public void toJsonTest() {
+        ArrayList<String> hs = new ArrayList<>();
+        for (i = 0 ; i< 10; i++) {
+            hs.add("s");
+        }
+        Recorder h = new Recorder(hs);
+        Progress pro = new Progress();
+        pro.addRecording(h);
+        assertEquals(1, pro.toJson().getJSONArray("songs").length());
+        ArrayList<Recorder> recorder = pro.getRecordings();
+        Recorder record = recorder.get(0);
+        ArrayList<String> music =record.getMusic();
+        assertEquals(10 , pro.toJson().getJSONArray("songs").getJSONArray(0).length());
+        for (int j = 0; j <10 ; j++) {
+            assertEquals("s", pro.toJson().getJSONArray("songs").getJSONArray(0).get(j));
+        }
+
+    }
+    @Test
+    void testWriterInvalidFile() {
+        try {
+            Progress pro = new Progress();
+            WriterJson writer = new WriterJson("./data/my\0illegal:fileName.json");
+            writer.open();
+            fail("IOException was expected");
+        } catch (IOException e) {
+            // pass
+        }
+    }
+    @Test
+    void testWriterGeneralWorkroom() {
+        try {
+            Progress pro = new Progress();
+            ArrayList<String> hs = new ArrayList<>();
+            for (i = 0 ; i< 10; i++) {
+                hs.add("s");
+            }
+            Recorder rec = new Recorder(hs);
+            pro.addRecording(rec);
+            WriterJson writer = new WriterJson("./data/TestWriter.json");
+            writer.open();
+            writer.write(pro);
+            writer.close();
+
+            JsonReader reader = new JsonReader("./data/TestWriter.json");
+            Progress proRead = reader.read();
+            List<Recorder> recordings = proRead.getRecordings();
+            assertEquals(1, recordings.size());
+            for (int j = 0; j <10 ; j++) {
+                assertEquals("s", pro.toJson().getJSONArray("songs").getJSONArray(0).get(j));
+            }
+        } catch (IOException e) {
+            fail("Exception should not have been thrown");
+        }
+    }
+
+    @Test
+    void testReaderNonExistentFile() {
+        JsonReader reader = new JsonReader("./data/noSuchFile.json");
+        try {
+            Progress pr = reader.read();
+            fail("IOException expected");
+        } catch (IOException e) {
+            // pass
+        }
+    }
+
+    @Test
+    void testReaderGeneralWorkRoom() {
+        JsonReader reader = new JsonReader("./data/TestWriter.json");
+        try {
+            Progress pr = reader.read();
+            List<Recorder> recordings = pr.getRecordings();
+            assertEquals(1, recordings.size());
+            for (int j = 0; j <10 ; j++) {
+                assertEquals("s", pr.toJson().getJSONArray("songs").getJSONArray(0).get(j));
+            }
+        } catch (IOException e) {
+            fail("Couldn't read from file");
+        }
     }
 
 

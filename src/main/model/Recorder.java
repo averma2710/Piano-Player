@@ -1,5 +1,9 @@
 package model;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
+import persisitence.Writable;
+
 import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
 import java.io.IOException;
@@ -9,7 +13,6 @@ import static ui.Main.keysPlayer;
 //Stores the sounds you wished to record.
 
 public class Recorder {
-
 
     ArrayList<String> music = new ArrayList<>();
     Piano piano = new Piano();
@@ -38,5 +41,12 @@ public class Recorder {
     public String recordedMusic(int i) {
         return music.get(i);
     }
+
+
 }
+
+
+
+
+
 

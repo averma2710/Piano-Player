@@ -1,5 +1,8 @@
 package model;
 
+import org.json.JSONObject;
+import persisitence.Writable;
+
 import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
 import java.io.File;
@@ -7,9 +10,9 @@ import java.io.IOException;
 
 //Assigns a sound fie to particular key entered by user.
 
-public class Piano {
+public class Piano implements Writable {
     File file;
-
+    String keys;
 //Constructs a Piano.
 
     public Piano() {
@@ -45,7 +48,12 @@ public class Piano {
 
 
     }
-
-
+    @Override
+    public JSONObject toJson() {
+        JSONObject json = new JSONObject();
+        json.put("key", keys);
+        return json;
+    }
 }
+
 

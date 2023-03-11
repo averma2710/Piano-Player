@@ -46,7 +46,7 @@ public class PlayLearn {
     //EFFECTS: Returns particular string for certain range of score.
 
     public String scorer() {
-        String output = "";
+        String output;
         if (score > 5) {
             output = "Nice score";
         } else {
@@ -77,5 +77,10 @@ public class PlayLearn {
     public String setPattern(String str) {
         this.pattern = str;
         return pattern;
+    }
+
+    public int setScore(int i) {
+        this.score = i;
+        return score;
     }
 }
