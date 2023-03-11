@@ -10,7 +10,7 @@ import java.io.IOException;
 
 //Assigns a sound fie to particular key entered by user.
 
-public class Piano implements Writable {
+public class Piano {
     File file;
     String keys;
 //Constructs a Piano.
@@ -49,12 +49,6 @@ public class Piano implements Writable {
 
     }
 
-    @Override
-    public JSONObject toJson() {
-        JSONObject json = new JSONObject();
-        json.put("key", keys);
-        return json;
-    }
 }
 
 

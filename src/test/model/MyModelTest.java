@@ -337,5 +337,12 @@ class MyModelTest {
         }
     }
 
+    @Test
+    void SetScoreTest() {
+        PlayLearn pl = new PlayLearn(0, "asdfghjkl");
+        pl.setScore(10);
+        assertEquals(10, pl.getScore());
+    }
+
 
 }
