@@ -37,10 +37,9 @@ public class Main extends Helper {
         String helper = key.nextLine();
 
         if (helper.equals("y")) {
-            System.out.println("HELLO");
             progress = jr.read();
         }
-        System.out.println("We come here");
+
 
 
         while (true) {
@@ -73,9 +72,9 @@ public class Main extends Helper {
                     tempRecord.add(keys1);
                 }
                 progress.addRecording(new Recorder(tempRecord));
-                System.out.println(progress.getRecordings().size());
 
-            } else if (keys1.equals("Q")) {
+
+            } else if (keys1.equals("QS")) {
                 if (helper.equals("y")) {
                     try {
                         wj.open();
@@ -102,6 +101,8 @@ public class Main extends Helper {
                 }
                 break;
 
+            } else if (keys1.equals("Q")) {
+                break;
             } else if (keys1.equals("RECORDS")) {
                 System.out.println("You have recorded " + progress.getRecordings().size() + " notes so far");
                 System.out.println("Enter the number of the recording you want to play");

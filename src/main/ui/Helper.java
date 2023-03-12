@@ -20,6 +20,7 @@ public class Helper {
         System.out.println("\t - To record your sound enter R\n");
         System.out.println("\t - For free play enter RANDOM \n");
         System.out.println("\t - To play your recording enter RECORDS \n");
+        System.out.println("\t - To quit and save your recording press QS");
         System.out.println("\t - To quit, enter Q");
     }
 
