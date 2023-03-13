@@ -7,6 +7,9 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 
+//REFERENCE : code below was referred from the following project :
+// https://github.students.cs.ubc.ca/CPSC210/JsonSerializationDemo.git
+
 public class WriterJson {
     private static final int TAB = 4;
     private PrintWriter writer;

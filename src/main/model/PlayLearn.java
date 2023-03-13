@@ -6,7 +6,8 @@ public class PlayLearn {
     private int score = 0;
     Learn learn = new Learn();
     String pattern;
-//Constructs a game with score and pattern.
+
+    //Constructs a game with score and pattern.
 
     public PlayLearn(int score, String pattern) {
         this.score = score;
@@ -78,6 +79,8 @@ public class PlayLearn {
         this.pattern = str;
         return pattern;
     }
+    //EFFECTS:  sets score to i and returns the score.
+    //MODIFIES: this
 
     public int setScore(int i) {
         this.score = i;

@@ -8,6 +8,9 @@ import persisitence.Writable;
 import java.util.ArrayList;
 //Constructs a progress which contains a list pf recorder.
 
+
+
+
 public class Progress implements Writable {
 
     ArrayList<Recorder> prev = new ArrayList<>();
@@ -31,13 +34,19 @@ public class Progress implements Writable {
         return prev.get(i);
     }
 
+    //REFERENCE : code below was referred from the following project :
+    // https://github.students.cs.ubc.ca/CPSC210/JsonSerializationDemo.git
+
     @Override
+    //EFFECTS: converts the player object into JSONObject.
+
     public JSONObject toJson() {
         JSONObject json = new JSONObject();
         json.put("recorder", "myRecorder");
         json.put("songs", recordersToJson());
         return json;
     }
+    //EFFECTS: stores music into
 
     private JSONArray recordersToJson() {
         JSONArray jsonArray = new JSONArray();
