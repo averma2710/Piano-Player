@@ -46,7 +46,7 @@ public class Progress implements Writable {
         json.put("songs", recordersToJson());
         return json;
     }
-    //EFFECTS: stores music into
+    //EFFECTS: stores music into jsonArray.
 
     private JSONArray recordersToJson() {
         JSONArray jsonArray = new JSONArray();

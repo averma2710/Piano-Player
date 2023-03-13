@@ -14,12 +14,10 @@ import java.util.Scanner;
 //Represents the piano where music is played.
 
 public class Main extends Helper {
+    // Effects: Runs the program and handles how user interacts with it
     @SuppressWarnings({"checkstyle:MethodLength", "checkstyle:SuppressWarnings"})
     public static void main(String[] args) throws LineUnavailableException, IOException,
             UnsupportedAudioFileException, InterruptedException {
-
-
-
 
         Piano piano = new Piano();
         Learn learn = new Learn();

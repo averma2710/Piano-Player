@@ -10,6 +10,9 @@ import java.io.PrintWriter;
 //REFERENCE : code below was referred from the following project :
 // https://github.students.cs.ubc.ca/CPSC210/JsonSerializationDemo.git
 
+
+// Represents a writer that writes JSON representation of progress to file.
+
 public class WriterJson {
     private static final int TAB = 4;
     private PrintWriter writer;

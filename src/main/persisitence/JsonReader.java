@@ -49,23 +49,25 @@ public class  JsonReader {
     // EFFECTS: parses Progress from JSON object and returns it
     private Progress parseProgress(JSONObject jsonObject) {
         Progress progress = new Progress();
-        addThingies(progress, jsonObject);
+        addRecorders(progress, jsonObject);
         return progress;
     }
 
     // MODIFIES: progress
     // EFFECTS: parses Recorder from JSON object and adds them to Progress.
-    private void addThingies(Progress progress, JSONObject jsonObject) {
+    private void addRecorders(Progress progress, JSONObject jsonObject) {
         JSONArray jsonArray = jsonObject.getJSONArray("songs");
         for (Object json : jsonArray) {
             JSONArray nextThingy = (JSONArray) json;
-            addThingy(progress, nextThingy);
+            addRecord(progress, nextThingy);
         }
     }
 
+
     // MODIFIES: progress
     // EFFECTS: parses recorder from JSON object and adds it to progress
-    private void addThingy(Progress progress, JSONArray jsonArray) {
+
+    private void addRecord(Progress progress, JSONArray jsonArray) {
         ArrayList<String> records = new ArrayList<>();
         for (Object s : jsonArray) {
             records.add((String) s);
@@ -74,3 +76,4 @@ public class  JsonReader {
         progress.addRecording(r);
     }
 }
+
