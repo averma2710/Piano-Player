@@ -1,17 +1,22 @@
 package ui;
 
+import model.Piano;
 import model.PlayLearn;
 import model.Progress;
 import persisitence.WriterJson;
 
+import javax.sound.sampled.*;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 
 // Represents a helper that cleans the main ui
 
 public class Helper {
-
+    static Piano piano;
 // constructs a helper
+
     public Helper() {
+        piano = new Piano();
     }
 //EFFECTS: prints a menu to clean menu.
 
@@ -55,9 +60,10 @@ public class Helper {
     }
     //EFFECTS: prints the recording menu
 
-    public static void recordingMenu() {
+    public static String recordingMenu() {
         System.out.println("Your beats will now be recorded");
         System.out.println("recording length must be of 10 keys");
+        return "your beats will be now be recorder";
     }
     //EFFECTS: prints out random player starter menu.
 
@@ -66,6 +72,21 @@ public class Helper {
         System.out.println("press keys a s d f g h j k l for different sounds, " + "any key for default sound \n");
         System.out.println("except the enter key");
         System.out.println("to quit enter QUIT");
+    }
+
+    public static void randomPlayer(String key) throws UnsupportedAudioFileException,
+            LineUnavailableException, IOException {
+        keysPlayer(key.substring(0, 1));
+
+    }
+
+
+    public static void keysPlayer(String key) throws LineUnavailableException,
+            IOException, UnsupportedAudioFileException {
+        AudioInputStream a = AudioSystem.getAudioInputStream(piano.music(key));
+        Clip clip = AudioSystem.getClip();
+        clip.open(a);
+        clip.start();
     }
 
 }
