@@ -32,16 +32,13 @@ public class MyFrame extends JFrame implements ActionListener, KeyListener {
     JButton recordings;
     JLabel currKey;
     JLabel whichRecord;
-    JButton display;
     String key;
     Boolean remover = false;
     Boolean isRecording = false;
-    ArrayList<String> recs = new ArrayList<>();
-    Progress progress = new Progress();
-    //ArrayList<Recorder> progress = new ArrayList<>();
     Boolean recordingNumber = false;
     Boolean randomPlayer = false;
-    private int ii;
+    ArrayList<String> recs = new ArrayList<>();
+    Progress progress = new Progress();
     ArrayList<String> list = new ArrayList<>();
     Recorder recorder = new Recorder(list);
     Helper helper;
@@ -66,7 +63,6 @@ public class MyFrame extends JFrame implements ActionListener, KeyListener {
         Font fontSize = whichRecord.getFont();
         float sizeFont = fontSize.getSize() + 3;
         whichRecord.setFont(font.deriveFont(sizeFont));
-        //currKey.setVisible(true);
         this.setVisible(true);
         this.setSize(500, 500);
         this.setTitle("Virtual Piano");
@@ -140,19 +136,24 @@ public class MyFrame extends JFrame implements ActionListener, KeyListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == random) {
-            ArrayList<String> tempRecord = new ArrayList<>();
             currKey.setText("Recording now");
             whichRecord.setText("");
             isRecording = true;
+            remover = false;
             recordingNumber = false;
             randomPlayer = false;
         }
         if (e.getSource() == play) {
             currKey.setText("Play any random keys");
-            isRecording = false;
-            recordingNumber = false;
             randomPlayer = true;
+            isRecording = false;
+            remover = false;
+            recordingNumber = false;
         }
+//        Boolean remover = false;
+//        Boolean isRecording = false;
+//        Boolean recordingNumber = false;
+//        Boolean randomPlayer = false;
         if (e.getSource() == recordings) {
             currKey.setText("You have " + String.valueOf(progress.getRecordings().size()) + "Recordings");
             whichRecord.setText("enter the number of recording you want to play");
@@ -160,20 +161,33 @@ public class MyFrame extends JFrame implements ActionListener, KeyListener {
             songs.labelMaker();
             recordingNumber = true;
             isRecording = false;
+            remover = false;
             randomPlayer = false;
+
         }
         if (e.getSource() == remove) {
+            recordingNumber = false;
             whichRecord.setText("Enter the record number to remove ");
             currKey.setText("");
             remover = true;
             recordingNumber = false;
+            isRecording = false;
+            randomPlayer = false;
         }
         if (e.getSource() == reorder) {
             currKey.setText("Shuffled your music!!");
             Collections.shuffle(progress.getRecordings());
+            recordingNumber = false;
+            isRecording = false;
+            remover = false;
+            randomPlayer = false;
         }
         if (e.getSource() == save) {
             currKey.setText("Saved");
+            recordingNumber = false;
+            isRecording = false;
+            remover = false;
+            randomPlayer = false;
             try {
                 writerJson.open();
                 writerJson.write(progress);
@@ -190,6 +204,7 @@ public class MyFrame extends JFrame implements ActionListener, KeyListener {
         String k = String.valueOf(e.getKeyChar());
         int i = Character.getNumericValue(e.getKeyChar());
         if (recordingNumber) {
+            randomPlayer = false;
             whichRecord.setText("");
             Recorder tempRecorder = progress.getRecorder(i - 1);
             ArrayList<String> tempMusic = tempRecorder.getMusic();
@@ -209,8 +224,10 @@ public class MyFrame extends JFrame implements ActionListener, KeyListener {
                 }
             }
             currKey.setText("");
+            recordingNumber = false;
         }
         if (isRecording) {
+            randomPlayer = false;
             recorder.addRecorder(k);
             currKey.setText(k);
             if (recorder.getMusic().size() > 10) {

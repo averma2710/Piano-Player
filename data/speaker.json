@@ -1,16 +1,4 @@
 {
     "recorder": "myRecorder",
-    "songs": [[
-        "f",
-        "h",
-        "d",
-        "l",
-        "s",
-        "h",
-        "f",
-        "s",
-        "s",
-        "f",
-        "f"
-    ]]
+    "songs": []
 }
