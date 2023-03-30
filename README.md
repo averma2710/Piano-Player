@@ -20,4 +20,14 @@ A *bulleted* list:
 - As a user, I want to have an option save my recordings.
 - As a user, I want to have an option to load my recordings and play them.
 
-  
+
+# Instructions for Grader
+
+- You can generate the first required action related to adding Xs to a Y by clicking on Record 
+ and entering the keys you want to record. You see your record by clicking on Recording.
+- You can generate the second required action related to adding Xs to a Y by removing a recorder from recordings 
+ you can do this by clicking on remove record.
+- You can locate my visual component by running the code, and my visual components opens up on the JFrame.
+- You can save the state of my application  by clicking on save.
+- You can reload the state of my application by clicking yes on the popup that appears just after 
+ running the code.
