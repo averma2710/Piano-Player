@@ -16,20 +16,9 @@ import java.util.Scanner;
 public class Main extends Helper {
     // Effects: Runs the program and handles how user interacts with it
     @SuppressWarnings({"checkstyle:MethodLength", "checkstyle:SuppressWarnings"})
-    public static void main(String[] args) throws LineUnavailableException, IOException,
-            UnsupportedAudioFileException, InterruptedException {
+    public static void main(String[] args) {
 
-        Piano piano = new Piano();
-        Learn learn = new Learn();
-        Helper h = new Helper();
-        PlayLearn learner = new PlayLearn(0, "");
-        Progress progress = new Progress();
-        int num;
-        final String SPEAKER = "./data/speaker.json";
-        WriterJson wj = new WriterJson(SPEAKER);
-        JsonReader jr = new JsonReader(SPEAKER);
-        Scanner key = new Scanner(System.in);
-        MyFrame pianoFrame = new MyFrame();
+        new MyFrame();
 
 
 //        System.out.println("Do you wish to load the data? (y/n)");

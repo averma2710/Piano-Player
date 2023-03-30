@@ -111,7 +111,7 @@ public class MyFrame extends JFrame implements ActionListener, KeyListener {
     public void buttonMaker() {
         save = new JButton();
         save.setBounds(850, 230, 100, 100);
-        save.setText("Save-Exit");
+        save.setText("Save");
         save.addActionListener(this);
         remove = new JButton();
         remove.setBounds(740, 10, 100, 100);
