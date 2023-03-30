@@ -6,12 +6,15 @@ import model.Recorder;
 import javax.swing.*;
 import java.util.ArrayList;
 
+// new JFrame for the recordings
+
 public class SavedSong extends JFrame {
     JLabel recordings;
     Progress progress;
     Recorder record;
     ArrayList<String> music;
 
+ // EFFECTS : constructor for the saved songs JFrame
     SavedSong(Progress p) {
         this.progress = p;
         this.setVisible(true);
@@ -20,6 +23,9 @@ public class SavedSong extends JFrame {
         this.setLayout(null);
 
     }
+
+    // EFFECTS : creates  label for the new JFrame
+    // MODIFIES : this
 
     public void labelMaker() {
         for (int i = 0; i < progress.getRecordings().size(); i++) {

@@ -22,6 +22,8 @@ import java.util.Scanner;
 
 import static ui.Helper.*;
 
+// Represents a JFrame for virtual piano.
+
 public class MyFrame extends JFrame implements ActionListener, KeyListener {
     JButton random;
     JButton save;
@@ -46,6 +48,8 @@ public class MyFrame extends JFrame implements ActionListener, KeyListener {
     JsonReader jsonReader;
     final String speaker = "./data/speaker.json";
 
+    // EFFECTS: constructor for the j frame.
+    @SuppressWarnings({"checkstyle:MethodLength", "checkstyle:SuppressWarnings"})
     MyFrame() {
         helper = new Helper();
         writerJson = new WriterJson(speaker);
@@ -100,6 +104,10 @@ public class MyFrame extends JFrame implements ActionListener, KeyListener {
 
     }
 
+    //EFFECTS : maker for the buttons.
+    //MODIFIES : this
+
+    @SuppressWarnings({"checkstyle:MethodLength", "checkstyle:SuppressWarnings"})
     public void buttonMaker() {
         save = new JButton();
         save.setBounds(850, 230, 100, 100);
@@ -133,6 +141,9 @@ public class MyFrame extends JFrame implements ActionListener, KeyListener {
         reorder.setFocusable(false);
     }
 
+    // EFFECTS : tracks the action performed.
+    // MODIFIES : this
+    @SuppressWarnings({"checkstyle:MethodLength", "checkstyle:SuppressWarnings"})
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == random) {
@@ -150,10 +161,7 @@ public class MyFrame extends JFrame implements ActionListener, KeyListener {
             remover = false;
             recordingNumber = false;
         }
-//        Boolean remover = false;
-//        Boolean isRecording = false;
-//        Boolean recordingNumber = false;
-//        Boolean randomPlayer = false;
+
         if (e.getSource() == recordings) {
             currKey.setText("You have " + String.valueOf(progress.getRecordings().size()) + "Recordings");
             whichRecord.setText("enter the number of recording you want to play");
@@ -199,6 +207,10 @@ public class MyFrame extends JFrame implements ActionListener, KeyListener {
         }
     }
 
+    // EFFECTS  : Tracks the key typed
+    // MODIFIES : this
+
+    @SuppressWarnings({"checkstyle:MethodLength", "checkstyle:SuppressWarnings"})
     @Override
     public void keyTyped(KeyEvent e) {
         String k = String.valueOf(e.getKeyChar());
@@ -254,11 +266,16 @@ public class MyFrame extends JFrame implements ActionListener, KeyListener {
         }
     }
 
+    //EFFECTS : tracks the key pressed
+
+
     @Override
     public void keyPressed(KeyEvent e) {
 
 
     }
+
+   //EFFECTS : tracks the key released
 
     @Override
     public void keyReleased(KeyEvent e) {

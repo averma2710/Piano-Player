@@ -74,12 +74,15 @@ public class Helper {
         System.out.println("to quit enter QUIT");
     }
 
+    //EFFECTS: plays the first substring of the string.
+
     public static void randomPlayer(String key) throws UnsupportedAudioFileException,
             LineUnavailableException, IOException {
         keysPlayer(key.substring(0, 1));
 
     }
 
+    //EFFECTS: plays the string.
 
     public static void keysPlayer(String key) throws LineUnavailableException,
             IOException, UnsupportedAudioFileException {
