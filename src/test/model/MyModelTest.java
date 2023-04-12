@@ -34,6 +34,11 @@ class MyModelTest {
     Recorder record10;
     Recorder record11;
     Recorder record12;
+    Recorder record13;
+    Recorder record14;
+    Recorder record15;
+    Recorder record16;
+
     ArrayList<String> list = new ArrayList<>();
     Learn learn;
     int i = 0;
@@ -56,6 +61,11 @@ class MyModelTest {
         record9 = new Recorder(list);
         record10 = new Recorder(list);
         record11 = new Recorder(list);
+        record12 = new Recorder(list);
+        record13 = new Recorder(list);
+        record14 = new Recorder(list);
+        record15 = new Recorder(list);
+        record16 = new Recorder(list);
     }
 
     @Test
@@ -399,28 +409,39 @@ class MyModelTest {
     void ShuffleMusic() {
         record.addRecorder("a");
         Records.addRecording(record);
-        record1.addRecorder("l");
+        record1.addRecorder("b");
         Records.addRecording(record1);
-        record2.addRecorder("a");
+        record2.addRecorder("c");
         Records.addRecording(record2);
-        record3.addRecorder("l");
+        record3.addRecorder("d");
         Records.addRecording(record3);
-        record4.addRecorder("a");
+        record4.addRecorder("e");
         Records.addRecording(record4);
-        record5.addRecorder("l");
+        record5.addRecorder("f");
         Records.addRecording(record5);
         record6.addRecorder("g");
         Records.addRecording(record6);
         record7.addRecorder("h");
         Records.addRecording(record7);
-        record11.addRecorder("m");
+        record11.addRecorder("i");
         Records.addRecording(record11);
-        record8.addRecorder("p");
+        record8.addRecorder("j");
         Records.addRecording(record8);
-        record9.addRecorder("z");
+        record9.addRecorder("k");
         Records.addRecording(record9);
-        record10.addRecorder("v");
+        record10.addRecorder("l");
         Records.addRecording(record10);
+        record12.addRecorder("m");
+        Records.addRecording(record12);
+        record13.addRecorder("n");
+        Records.addRecording(record13);
+        record14.addRecorder("o");
+        Records.addRecording(record14);
+        record15.addRecorder("p");
+        Records.addRecording(record15);
+        record16.addRecorder("q");
+        Records.addRecording(record16);
+
         ArrayList<Recorder> testList = Records.getRecordings();
         ArrayList<Recorder> testList2 = new ArrayList<>(testList);
         Records.shuffler();
