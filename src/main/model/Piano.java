@@ -18,12 +18,9 @@ public class Piano {
     public Piano() {
 
     }
-
-    @SuppressWarnings({"checkstyle:MethodLength", "checkstyle:SuppressWarnings"})
     //EFFECTS returns music file.
+
     public File music(String keys) throws LineUnavailableException, IOException, UnsupportedAudioFileException {
-
-
         if (keys.equals("a")) {
             return file = new File("src/main/key01.wav");
         } else if (keys.equals("s")) {
@@ -45,8 +42,6 @@ public class Piano {
         } else {
             return file = new File("src/main/key09.wav");
         }
-
-
     }
 
 }

@@ -23,6 +23,17 @@ class MyModelTest {
     Progress Records;
     Recorder record;
     Recorder record1;
+    Recorder record2;
+    Recorder record3;
+    Recorder record4;
+    Recorder record5;
+    Recorder record6;
+    Recorder record7;
+    Recorder record8;
+    Recorder record9;
+    Recorder record10;
+    Recorder record11;
+    Recorder record12;
     ArrayList<String> list = new ArrayList<>();
     Learn learn;
     int i = 0;
@@ -35,6 +46,16 @@ class MyModelTest {
         record = new Recorder(list);
         record1 = new Recorder(list);
         learn = new Learn();
+        record2 = new Recorder(list);
+        record3 = new Recorder(list);
+        record4 = new Recorder(list);
+        record5 = new Recorder(list);
+        record6 = new Recorder(list);
+        record7 = new Recorder(list);
+        record8 = new Recorder(list);
+        record9 = new Recorder(list);
+        record10 = new Recorder(list);
+        record11 = new Recorder(list);
     }
 
     @Test
@@ -344,6 +365,67 @@ class MyModelTest {
         PlayLearn pl = new PlayLearn(0, "asdfghjkl");
         pl.setScore(10);
         assertEquals(10, pl.getScore());
+    }
+
+    @Test
+    void RemoveRecorder() {
+        record.addRecorder("a");
+        record.addRecorder("s");
+        record.addRecorder("d");
+        record.addRecorder("f");
+        record.addRecorder("g");
+        record.addRecorder("h");
+        record.addRecorder("j");
+        record.addRecorder("k");
+        record.addRecorder("l");
+        Records.addRecording(record);
+        record1.addRecorder("l");
+        record1.addRecorder("s");
+        record1.addRecorder("d");
+        record1.addRecorder("f");
+        record1.addRecorder("g");
+        record1.addRecorder("h");
+        record1.addRecorder("j");
+        record1.addRecorder("k");
+        record1.addRecorder("l");
+        Records.addRecording(record1);
+        Records.remover(1);
+        assertEquals(1, Records.getRecordings().size());
+        assertEquals(record1, Records.getRecorder(0));
+
+    }
+
+    @Test
+    void ShuffleMusic() {
+        record.addRecorder("a");
+        Records.addRecording(record);
+        record1.addRecorder("l");
+        Records.addRecording(record1);
+        record2.addRecorder("a");
+        Records.addRecording(record2);
+        record3.addRecorder("l");
+        Records.addRecording(record3);
+        record4.addRecorder("a");
+        Records.addRecording(record4);
+        record5.addRecorder("l");
+        Records.addRecording(record5);
+        record6.addRecorder("g");
+        Records.addRecording(record6);
+        record7.addRecorder("h");
+        Records.addRecording(record7);
+        record11.addRecorder("m");
+        Records.addRecording(record11);
+        record8.addRecorder("p");
+        Records.addRecording(record8);
+        record9.addRecorder("z");
+        Records.addRecording(record9);
+        record10.addRecorder("v");
+        Records.addRecording(record10);
+        ArrayList<Recorder> testList = Records.getRecordings();
+        ArrayList<Recorder> testList2 = new ArrayList<>(testList);
+        Records.shuffler();
+        assertNotEquals(testList,testList2);
+
     }
 
 

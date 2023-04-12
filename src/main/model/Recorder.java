@@ -15,11 +15,11 @@ import static ui.Main.keysPlayer;
 public class Recorder {
 
     ArrayList<String> music = new ArrayList<>();
-    Piano piano = new Piano();
+
 
     //EFFECTS: sets music to keys.
     //MODIFIES: this
-//Constructs a recorder that contains music which is a list of strings.
+    //Constructs a recorder that contains music which is a list of strings.
 
     public Recorder(ArrayList<String> keys) {
         music = keys;
@@ -29,6 +29,7 @@ public class Recorder {
 
     public void addRecorder(String key) {
         music.add(key);
+        EventLog.getInstance().logEvent(new Event("Added " + key +  " to music list in Recorder"));
     }
 
     //EFFECTS: Returns music.

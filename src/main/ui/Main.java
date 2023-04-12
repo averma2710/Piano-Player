@@ -10,17 +10,14 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-@SuppressWarnings({"checkstyle:LineLength", "checkstyle:SuppressWarnings"})
+
 //Represents the piano where music is played.
 
 public class Main extends Helper {
     // Effects: Runs the program and handles how user interacts with it
-    @SuppressWarnings({"checkstyle:MethodLength", "checkstyle:SuppressWarnings"})
     public static void main(String[] args) {
 
         new MyFrame();
-
-
 //        System.out.println("Do you wish to load the data? (y/n)");
 //        String helper = key.nextLine();
 //
@@ -142,6 +139,7 @@ public class Main extends Helper {
 //        Clip clip = AudioSystem.getClip();
 //        clip.open(a);
 //        clip.start();
+
     }
 
 }
