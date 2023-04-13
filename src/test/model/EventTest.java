@@ -56,7 +56,13 @@ public class EventTest {
         assertEquals(t,t1);
         assertNotEquals(t1, t2);
 
+        try {
+            Thread.sleep(100);
+        } catch (InterruptedException ex) {
+            throw new RuntimeException(ex);
+        }
         Event t3 = new Event("added something");
+
 
         assertNotEquals(t,t3);
         assertNotEquals(t1,t3);
@@ -66,6 +72,7 @@ public class EventTest {
 
         assertEquals(t.hashCode(), t1.hashCode());
         assertNotEquals(t1.hashCode(), t5.hashCode());
+
         assertNotEquals(t.hashCode(), t2.hashCode());
 
 
