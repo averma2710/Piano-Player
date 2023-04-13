@@ -29,7 +29,6 @@ public class Recorder {
 
     public void addRecorder(String key) {
         music.add(key);
-        EventLog.getInstance().logEvent(new Event("Added " + key +  " to music list in Recorder"));
     }
 
     //EFFECTS: Returns music.

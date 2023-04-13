@@ -34,6 +34,28 @@ A *bulleted* list:
 - You can reload the state of my application by clicking yes on the popup that appears just after 
  running the code.
 
+# Phase 4 : task 2
+This is what will happen when I add three Recorders, shuffle them and delete one of them.
+
+Thu Apr 13 15:14:19 PDT 2023
+Added a recorder to list of Records
+
+
+Thu Apr 13 15:14:21 PDT 2023
+Added a recorder to list of Records
+
+
+Thu Apr 13 15:14:23 PDT 2023
+Added a recorder to list of Records
+
+
+Thu Apr 13 15:14:25 PDT 2023
+Shuffled Records in list of Records
+
+
+Thu Apr 13 15:14:27 PDT 2023
+Removed the record at 1 from list of Records
+
 
 # Phase 4 : task 3
 
