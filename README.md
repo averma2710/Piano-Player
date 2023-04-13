@@ -33,3 +33,26 @@ A *bulleted* list:
 - You can save the state of my application  by clicking on save.
 - You can reload the state of my application by clicking yes on the popup that appears just after 
  running the code.
+
+
+# Phase 4 : task 3
+
+
+
+#### Refactoring I would have done if I had more time.
+
+I would have implemented an iterator for my Progress class
+that would give access to list of Recorder without knowing 
+progress internal implementation.
+With this implementation, I can use the iterator to access the list of Recorders
+and play them efficiently, Because external code can access the necessary data without relying on the implementation specifics of the Progress class,
+this can help my code be easier to maintain and understand.
+
+Cohesion in my classes could be improved by refactoring the methods that are performing unrelated tasks, which is something I would do if I had more time to work on it.
+This would make my code easier to understand and reusable.
+
+#### Design pattern i used:
+
+I implemented singleton pattern to the EventLog class to ensure that
+only one instance of class is created and provides global point of
+access for it.
